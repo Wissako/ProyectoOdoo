@@ -1,0 +1,106 @@
+<odoo>
+  <data>
+
+     <record id="libro_1" model="libreria.libro">
+      <field name="nombreLibro">El camino de los reyes</field>
+      <field name="descripcion">Primer libro de la saga El Archivo de las Tormentas.</field>
+      <field name="numPaginas">1200</field>
+      <field name="precio">25.99</field>
+      <field name="existencias">True</field>
+      <field name="fechaPublicacion">2010-08-31</field>
+      <field name="fechaRegistro">2025-11-20 12:00:00</field>
+    </record>
+
+    <record id="libro_2" model="libreria.libro">
+      <field name="nombreLibro">Palabras radiantes</field>
+      <field name="descripcion">Segundo libro de la saga El Archivo de las Tormentas.</field>
+      <field name="numPaginas">1080</field>
+      <field name="precio">24.50</field>
+      <field name="existencias">True</field>
+      <field name="fechaPublicacion">2014-03-04</field>
+      <field name="fechaRegistro">2025-11-20 12:05:00</field>
+    </record>
+
+    <record id="libro_3" model="libreria.libro">
+      <field name="nombreLibro">Juramentada</field>
+      <field name="descripcion">Tercer libro de la saga El Archivo de las Tormentas.</field>
+      <field name="numPaginas">1200</field>
+      <field name="precio">27.00</field>
+      <field name="existencias">True</field>
+      <field name="fechaPublicacion">2017-11-14</field>
+      <field name="fechaRegistro">2025-11-20 12:10:00</field>
+    </record>
+
+    <record id="libro_4" model="libreria.libro">
+      <field name="nombreLibro">El aliento de los dioses</field>
+      <field name="descripcion">Libro independiente de fantasía épica.</field>
+      <field name="numPaginas">700</field>
+      <field name="precio">19.99</field>
+      <field name="existencias">True</field>
+      <field name="fechaPublicacion">2007-01-01</field>
+      <field name="fechaRegistro">2025-11-20 12:15:00</field>
+    </record>
+
+    <record id="libro_5" model="libreria.libro">
+      <field name="nombreLibro">Elantris</field>
+      <field name="descripcion">Primer libro publicado de Brandon Sanderson.</field>
+      <field name="numPaginas">640</field>
+      <field name="precio">18.50</field>
+      <field name="existencias">True</field>
+      <field name="fechaPublicacion">2005-04-21</field>
+      <field name="fechaRegistro">2025-11-20 12:20:00</field>
+    </record>
+
+    <record id="libro_6" model="libreria.libro">
+      <field name="nombreLibro">Nacidos de la bruma: El imperio final</field>
+      <field name="descripcion">Primera parte de la trilogía Nacidos de la Bruma.</field>
+      <field name="numPaginas">720</field>
+      <field name="precio">21.00</field>
+      <field name="existencias">True</field>
+      <field name="fechaPublicacion">2006-07-17</field>
+      <field name="fechaRegistro">2025-11-20 12:25:00</field>
+    </record>
+
+    <record id="libro_7" model="libreria.libro">
+      <field name="nombreLibro">Nacidos de la bruma: El pozo de la ascensión</field>
+      <field name="descripcion">Segunda parte de la trilogía Nacidos de la Bruma.</field>
+      <field name="numPaginas">800</field>
+      <field name="precio">22.50</field>
+      <field name="existencias">True</field>
+      <field name="fechaPublicacion">2007-08-21</field>
+      <field name="fechaRegistro">2025-11-20 12:30:00</field>
+    </record>
+
+    <record id="libro_8" model="libreria.libro">
+      <field name="nombreLibro">Nacidos de la bruma: El héroe de las eras</field>
+      <field name="descripcion">Tercera parte de la trilogía Nacidos de la Bruma.</field>
+      <field name="numPaginas">880</field>
+      <field name="precio">23.50</field>
+      <field name="existencias">True</field>
+      <field name="fechaPublicacion">2008-10-14</field>
+      <field name="fechaRegistro">2025-11-20 12:35:00</field>
+    </record>
+
+    <record id="libro_9" model="libreria.libro">
+      <field name="nombreLibro">Warbreaker</field>
+      <field name="descripcion">Novela de fantasía independiente de Brandon Sanderson.</field>
+      <field name="numPaginas">600</field>
+      <field name="precio">17.99</field>
+      <field name="existencias">True</field>
+      <field name="fechaPublicacion">2009-06-09</field>
+      <field name="fechaRegistro">2025-11-20 12:40:00</field>
+    </record>
+
+    <record id="libro_10" model="libreria.libro">
+      <field name="nombreLibro">El archivo de las tormentas: El ritmo de la guerra</field>
+      <field name="descripcion">Cuarto libro de la saga El Archivo de las Tormentas.</field>
+      <field name="numPaginas">1250</field>
+      <field name="precio">28.00</field>
+      <field name="existencias">True</field>
+      <field name="fechaPublicacion">2020-11-17</field>
+      <field name="fechaRegistro">2025-11-20 12:45:00</field>
+    </record>
+
+  </data>
+</odoo>
+
