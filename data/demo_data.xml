@@ -1,0 +1,54 @@
+<odoo>
+    <data noupdate="1">
+        <record id="demo_proyecto_01" model="gestor.proyecto">
+            <field name="name">Desarrollo App Odoo 19</field>
+            <field name="descripcion">Proyecto piloto para probar el nuevo módulo.</field>
+            <field name="fecha_inicio" eval="(DateTime.now()).strftime('%Y-%m-%d')"/>
+            <field name="estado">ejecucion</field>
+            <field name="responsable_id" ref="base.user_admin"/> 
+        </record>
+
+        <record id="demo_trabajo_01" model="gestor.trabajo">
+            <field name="name">Fase 1: Backend</field>
+            <field name="proyecto_id" ref="demo_proyecto_01"/>
+            <field name="responsable_id" ref="base.user_admin"/>
+            <field name="estado">en_progreso</field>
+            <field name="importancia">alta</field>
+            <field name="fecha_inicio" eval="(DateTime.now()).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_actividad_01" model="gestor.actividad">
+            <field name="nombre">Crear Modelos</field>
+            <field name="detalle_tarea">Definir las clases Python para Proyecto y Trabajo.</field>
+            <field name="trabajo_id" ref="demo_trabajo_01"/>
+            <field name="estado">finalizada</field>
+            <field name="avance_individual">100.0</field>
+            <field name="inicio_planificado" eval="(DateTime.now()).strftime('%Y-%m-%d')"/>
+        </record>
+         <record id="demo_proyecto_02" model="gestor.proyecto">
+            <field name="name">Desarrollo App Odoo 19 prueba 2</field>
+            <field name="descripcion">Proyecto piloto para probar el nuevo módulo.</field>
+            <field name="fecha_inicio" eval="(DateTime.now()).strftime('%Y-%m-%d')"/>
+            <field name="estado">ejecucion</field>
+            <field name="responsable_id" ref="base.user_admin"/> 
+        </record>
+
+        <record id="demo_trabajo_02" model="gestor.trabajo">
+            <field name="name">Fase 1: Backend</field>
+            <field name="proyecto_id" ref="demo_proyecto_02"/>
+            <field name="responsable_id" ref="base.user_admin"/>
+            <field name="estado">en_progreso</field>
+            <field name="importancia">alta</field>
+            <field name="fecha_inicio" eval="(DateTime.now()).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_actividad_02" model="gestor.actividad">
+            <field name="nombre">Crear Modelos</field>
+            <field name="detalle_tarea">Definir las clases Python para Proyecto y Trabajo.</field>
+            <field name="trabajo_id" ref="demo_trabajo_02"/>
+            <field name="estado">en_curso</field>
+            <field name="avance_individual">25.0</field>
+            <field name="inicio_planificado" eval="(DateTime.now()).strftime('%Y-%m-%d')"/>
+        </record>
+    </data>
+</odoo>

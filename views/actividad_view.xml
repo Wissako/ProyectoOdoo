@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+        <record id="gestor_actividad_view_list" model="ir.ui.view">
+            <field name="name">gestor.actividad.list</field>
+            <field name="model">gestor.actividad</field>
+            <field name="arch" type="xml">
+                <list decoration-muted="estado == 'cancelada'">
+                    <field name="name" />
+                    <field name="trabajo_id" />
+                    <field name="persona_id" />
+                    <field name="fin_planificado" />
+                    <field name="estado" widget="badge" 
+                           decoration-success="estado == 'finalizada'" 
+                           decoration-info="estado == 'en_curso'" />
+                    <field name="avance_individual" widget="progressbar" />
+                </list>
+            </field>
+        </record>
+
+        <record id="gestor_actividad_view_form" model="ir.ui.view">
+            <field name="name">gestor.actividad.form</field>
+            <field name="model">gestor.actividad</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="estado" widget="statusbar" 
+                               options="{'clickable': '1'}" 
+                               statusbar_visible="pendiente,en_curso,finalizada" />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Resumen de la actividad..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="trabajo_id" />
+                                <field name="persona_id" />
+                            </group>
+                            <group>
+                                <field name="inicio_planificado" />
+                                <field name="fin_planificado" />
+                                
+                                <field name="avance_individual" string="Porcentaje completado (%)"/>
+                            </group>
+                        </group>
+                        
+                        <field name="detalle_tarea" placeholder="Describe aquí los detalles técnicos..."/>
+
+                    </sheet>
+                    
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" />
+                        <field name="activity_ids" />
+                        <field name="message_ids" />
+                    </div>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

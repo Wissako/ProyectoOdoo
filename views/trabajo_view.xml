@@ -1,0 +1,80 @@
+<odoo>
+    <data>
+        <record id="gestor_trabajo_view_list" model="ir.ui.view">
+            <field name="name">gestor.trabajo.list</field>
+            <field name="model">gestor.trabajo</field>
+            <field name="arch" type="xml">
+                <list decoration-warning="importancia == 'urgente'">
+                    <field name="name"/>
+                    <field name="proyecto_id"/>
+                    <field name="responsable_id"/>
+                    <field name="fecha_fin"/>
+                    <field name="importancia" widget="badge"
+                           decoration-danger="importancia == 'urgente'"
+                           decoration-warning="importancia == 'alta'"/>
+                    <field name="estado" widget="badge"
+                           decoration-success="estado == 'finalizado'"
+                           decoration-info="estado == 'en_progreso'"/>
+                    <field name="promedio_avance" widget="progressbar"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="gestor_trabajo_view_form" model="ir.ui.view">
+            <field name="name">gestor.trabajo.form</field>
+            <field name="model">gestor.trabajo</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="estado" widget="statusbar" 
+                               options="{'clickable': '1'}" 
+                               statusbar_visible="pendiente,en_progreso,en_revision,finalizado"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1><field name="name" placeholder="Título del trabajo"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="proyecto_id"/>
+                                <field name="responsable_id"/>
+                                <field name="importancia"/>
+                            </group>
+                            <group>
+                                <field name="fecha_inicio"/>
+                                <field name="fecha_fin"/>
+                                
+                                <field name="promedio_avance" widget="progressbar" string="Progreso Total"/>
+                                
+                                <field name="avance_individual" 
+                                       string="Introducir % Manual" 
+                                       invisible="actividad_ids"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Actividades">
+                                <field name="actividad_ids">
+                                    <list editable="bottom">
+                                        <field name="name"/> 
+                                        
+                                        <field name="persona_id"/> 
+                                        
+                                        <field name="estado"/>
+                                        
+                                        <field name="avance_individual" string="% Avance"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

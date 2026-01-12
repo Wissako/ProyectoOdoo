@@ -1,0 +1,75 @@
+<odoo>
+    <data>
+        <record id="gestor_proyecto_view_list" model="ir.ui.view">
+            <field name="name">gestor.proyecto.list</field>
+            <field name="model">gestor.proyecto</field>
+            <field name="arch" type="xml">
+                <list decoration-success="estado == 'finalizado'" decoration-info="estado == 'ejecucion'">
+                    <field name="name"/>
+                    <field name="responsable_id"/>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                    <field name="estado" widget="badge" 
+                           decoration-success="estado == 'finalizado'"
+                           decoration-info="estado == 'ejecucion'"
+                           decoration-muted="estado == 'borrador'"/>
+                    <field name="porcentaje_avance" widget="progressbar"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="gestor_proyecto_view_form" model="ir.ui.view">
+            <field name="name">gestor.proyecto.form</field>
+            <field name="model">gestor.proyecto</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="estado" widget="statusbar" 
+                               options="{'clickable': '1'}" 
+                               statusbar_visible="borrador,planificacion,ejecucion,finalizado"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" string="Nombre del Proyecto"/>
+                            <h1>
+                                <field name="name" placeholder="Ej: Desarrollo Web Corporativo"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="responsable_id"/>
+                                <field name="fecha_inicio"/>
+                                <field name="fecha_fin"/>
+                            </group>
+                            <group>
+                                <field name="porcentaje_avance" widget="progressbar"/>
+                                <field name="avance_individual" invisible="porcentaje_avance != 0.0"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Descripción">
+                                <field name="descripcion"/>
+                            </page>
+                            <page string="Trabajos">
+                                <field name="trabajo_ids">
+                                    <list editable="bottom">
+                                        <field name="name"/>
+                                        <field name="responsable_id"/>
+                                        <field name="estado"/>
+                                        <field name="promedio_avance" widget="progressbar"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

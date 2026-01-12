@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <menuitem id="menu_gestor_proyectos_root" 
+                  name="Gestión de Proyectos" 
+                  sequence="10"
+                  web_icon="gestor,static/description/icon.png"/>
+
+        <record id="action_gestor_proyecto" model="ir.actions.act_window">
+            <field name="name">Proyectos</field>
+            <field name="res_model">gestor.proyecto</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record id="action_gestor_trabajo" model="ir.actions.act_window">
+            <field name="name">Trabajos</field>
+            <field name="res_model">gestor.trabajo</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record id="action_gestor_actividad" model="ir.actions.act_window">
+            <field name="name">Actividades</field>
+            <field name="res_model">gestor.actividad</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="menu_gestor_proyecto" parent="menu_gestor_proyectos_root" action="action_gestor_proyecto" sequence="10"/>
+        <menuitem id="menu_gestor_trabajo" parent="menu_gestor_proyectos_root" action="action_gestor_trabajo" sequence="20"/>
+        <menuitem id="menu_gestor_actividad" parent="menu_gestor_proyectos_root" action="action_gestor_actividad" sequence="30"/>
+    </data>
+</odoo>

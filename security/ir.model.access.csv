@@ -1,5 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-
-access_libreria_libro,libreria.libro,model_libreria_libro,base.group_user,1,1,1,1
-access_libreria_autor,libreria.autor,model_libreria_autor,base.group_user,1,1,1,1
-access_libreria_editorial,libreria.editorial,model_libreria_editorial,base.group_user,1,1,1,1
+access_gestor_proyecto,gestor.proyecto,model_gestor_proyecto,base.group_user,1,1,1,1
+access_gestor_trabajo,gestor.trabajo,model_gestor_trabajo,base.group_user,1,1,1,1
+access_gestor_actividad,gestor.actividad,model_gestor_actividad,base.group_user,1,1,1,1

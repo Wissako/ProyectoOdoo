@@ -1,39 +1,42 @@
 {
     'name': "Gestor De Proyectos",
-
     'summary': "Gestor donde se lleva el seguimiento de proyectos",
-
     'description': """
-        gestor de proyectos para controlar el desarrollo de apps en 2ºDAM
+        Gestor de proyectos para controlar el desarrollo de apps en 2ºDAM.
+        Permite gestionar Proyectos, Trabajos y Actividades.
     """,
-
-    'author': "My Company",
+    'author': "Luis Alfonso Pérez Rojo", # [cite: 76] El PDF pide el autor.
     'website': "https://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
+    'category': 'Project Management',
     'version': '0.1',
 
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
+    # Dependencias: 'mail' es OBLIGATORIO para las notificaciones y el chatter
+    'depends': ['base', 'mail'], 
 
-    # always loaded
+    # Archivos de datos: El orden es IMPORTANTE
     'data': [
+        # 1. Seguridad (Primero los grupos, luego el CSV)
+        'security/security.xml',
         'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        
+        # 2. Vistas de los modelos (Tal como pide el PDF )
+        'views/proyecto_view.xml',
+        'views/trabajo_view.xml',
+        'views/actividad_view.xml',
+        
+        # 3. Menús (Se cargan al final para que encuentren las acciones)
+        'views/menus.xml',
     ],
-    # only loaded in demonstration mode
+    
+    # Archivos de demostración [cite: 81]
     'demo': [
-        'demo/demo.xml',
+        'data/demo_data.xml', # Asegúrate de crear este archivo o comenta la línea si no lo tienes aún
     ],
-    'data': [
-    'security/security.xml',
-    'security/ir.model.access.csv',
-    'views/views.xml',
-],
-
+    
+    # Icono del módulo 
+    'icon': '/gestor/static/description/icon.png', 
+    
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
 }
-
